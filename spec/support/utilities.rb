@@ -13,6 +13,13 @@ def valid_signup
   fill_in "Password confirmation", with: "foobar"
 end
 
+def sign_in(user)
+  visit signin_path
+  valid_signin user
+  cookies[:remember_token] = user.remember_token
+end
+
+
 RSpec::Matchers.define :have_error_message do |message|
   match do |page|
     page.should have_selector('div.alert.alert-error', text: message)
