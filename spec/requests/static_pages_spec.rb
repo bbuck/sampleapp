@@ -31,6 +31,17 @@ describe "Static pages" do
         end
       end
 
+      describe "follower/following counts" do
+        let(:other_user) { FactoryGirl.create :user }
+        before do
+          other_user.follow! user
+          visit root_path
+        end
+
+        it { should have_link("0 following", href: following_users_path(user)) }
+        it { should have_link("1 followers", href: followers_users_path(user)) }
+      end
+
       describe "micropost count" do
         before do 
           user.microposts.first.destroy
