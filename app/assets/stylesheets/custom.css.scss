@@ -158,6 +158,7 @@ input, textarea, select, .uneditable-input {
 
 #error_explanation {
   color: #f00;
+  
   ul {
     list-style: none;
     margin: 0 0 18px 0;
@@ -193,5 +194,51 @@ input, textarea, select, .uneditable-input {
     &:last-child {
       border-bottom: 1px solid $grayLighter;
     }
+  }
+}
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+
+.content {
+  display: block;
+}
+
+.timestamp {
+  color: $grayLight;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+
+  #char-count {
+    text-align: right;
+    font-size: 2.1em;
+    color: lighten(gray, 10%);
+  }
+
+  #char-count.medium {
+    color: darken(yellow, 18%);
+  }
+
+  #char-count.high {
+    color: darken(red, 18%);
   }
 }
