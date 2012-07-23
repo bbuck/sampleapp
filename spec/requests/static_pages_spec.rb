@@ -12,7 +12,7 @@ describe "Static pages" do
     before { visit root_path }
     let(:heading) { 'Sample App' }
     let(:page_title) { '' }
-    
+
     it_should_behave_like "all static pages"
     it { should_not have_title('| Home') }
 
@@ -38,12 +38,12 @@ describe "Static pages" do
           visit root_path
         end
 
-        it { should have_link("0 following", href: following_users_path(user)) }
-        it { should have_link("1 followers", href: followers_users_path(user)) }
+        it { should have_link("0 following", href: following_user_path(user)) }
+        it { should have_link("1 followers", href: followers_user_path(user)) }
       end
 
       describe "micropost count" do
-        before do 
+        before do
           user.microposts.first.destroy
           visit root_path
         end
